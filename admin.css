@@ -133,3 +133,47 @@ body {
         padding: 20px;
     }
 }
+.history-box {
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.history-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.history-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-box th,
+.history-box td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.history-box th {
+    font-weight: bold;
+}
+
+.history-box tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+
+    .history-box {
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+    .history-box table {
+        min-width: 500px;
+    }
+}
