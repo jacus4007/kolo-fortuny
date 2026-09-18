@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f4f1ea;
+    color: #222;
+}
+
+.admin-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.admin-header h1 {
+    margin: 0 0 10px;
+    font-size: 42px;
+}
+
+.admin-header p {
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+}
+
+.admin-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.admin-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#personName {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+}
+
+#personName:focus {
+    border-color: #222;
+}
+
+#generateButton {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #222;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#generateButton:hover {
+    transform: scale(1.01);
+}
+
+#generateButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#generatedLink {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    word-break: break-word;
+}
+
+#generatedLink p {
+    margin-top: 0;
+    font-size: 17px;
+}
+
+#linkInput {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+#copyButton {
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #555;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#copyButton:hover {
+    background: #333;
+}
+
+@media (max-width: 600px) {
+
+    .admin-container {
+        padding: 30px 15px;
+    }
+
+    .admin-header h1 {
+        font-size: 32px;
+    }
+
+    .admin-box {
+        padding: 20px;
+    }
+}
