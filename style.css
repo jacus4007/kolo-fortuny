@@ -156,55 +156,7 @@ border-image: linear-gradient(
 
     z-index: 4;
 }
-/* Centralny metalowy element 3D */
-.wheel::marker {
-    display: none;
-}
 
-.wheel::before {
-    /* pozostawiamy dotychczasowy efekt */
-}
-
-.wheel .center-hub {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 92px;
-    height: 92px;
-    transform: translate(-50%, -50%);
-    border-radius: 50% !important;
-    z-index: 8;
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            #fff7c9 0%,
-            #f5d76e 15%,
-            #d4af37 35%,
-            #8a6415 68%,
-            #4d3509 100%
-        );
-
-    border: 5px solid #f8e7a8;
-
-    box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.55),
-        0 0 0 4px #8a6415,
-        0 0 0 7px #d4af37,
-        inset 5px 5px 10px rgba(255, 255, 255, 0.5),
-        inset -7px -8px 12px rgba(0, 0, 0, 0.55);
-}
-
-    border: 5px solid #f8e7a8;
-
-    box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.55),
-        0 0 0 4px #8a6415,
-        0 0 0 7px #d4af37,
-        inset 5px 5px 10px rgba(255, 255, 255, 0.5),
-        inset -7px -8px 12px rgba(0, 0, 0, 0.55);
-}
 /* KWOTY */
 
 .segment {
