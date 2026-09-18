@@ -162,8 +162,19 @@ async function spinWheel() {
     }
 
     // Środek odpowiedniego pola
-    const segmentCenter = index * 40 + 20;
+  const segmentCenters = {
+    40: 20,
+    45: 60,
+    50: 100,
+    60: 140,
+    70: 180,
+    80: 220,
+    100: 260,
+    140: 300,
+    200: 340
+};
 
+const segmentCenter = segmentCenters[result];
     // Wskaźnik znajduje się na górze koła
     const targetAngle = 360 - segmentCenter;
 
