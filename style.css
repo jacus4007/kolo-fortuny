@@ -35,8 +35,10 @@ p {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #6b5737;
-    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.7);
+    color: #5a4630;
+text-shadow:
+    0 1px 0 #ffffff,
+    0 2px 6px rgba(212, 175, 55, 0.35);
 }
 /* OBSZAR KOŁA */
 
