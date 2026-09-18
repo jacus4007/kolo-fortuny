@@ -30,9 +30,12 @@ h1 {
     text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 p {
-    margin: 10px 0 0;
-    font-size: 19px;
+    margin: 12px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
     color: #5a4a32;
+    text-shadow: 0 2px 8px rgba(90, 74, 50, 0.15);
 }
 
 /* OBSZAR KOŁA */
