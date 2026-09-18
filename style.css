@@ -5,235 +5,353 @@
 body {
     margin: 0;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: Arial, sans-serif;
-    background: #f4f1ea;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at top, #172b55 0%, #0b1630 45%, #050b19 100%);
 }
 
 .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 45px 20px 60px;
     text-align: center;
-    padding: 30px 20px;
 }
 
+/* NAGŁÓWEK */
+
 h1 {
-    font-size: 42px;
-    margin: 0 0 10px;
+    margin: 0;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
 }
 
 p {
-    font-size: 20px;
+    margin: 10px 0 0;
+    font-size: 19px;
+    color: #d9e0ef;
 }
+
+/* KOŁO */
 
 .wheel-area {
     position: relative;
-    width: 420px;
-    height: 420px;
-    margin: 35px auto;
+    width: 480px;
+    height: 480px;
+    margin: 45px auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wheel {
     position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    border: 8px solid #222;
+    border: 12px solid #d4af37;
+
     overflow: hidden;
 
     background: conic-gradient(
-        #ff7675 0deg 40deg,
-        #74b9ff 40deg 80deg,
-        #55efc4 80deg 120deg,
-        #ffeaa7 120deg 160deg,
-        #a29bfe 160deg 200deg,
-        #fd79a8 200deg 240deg,
-        #81ecec 240deg 280deg,
-        #fab1a0 280deg 320deg,
-        #ffeaa7 320deg 360deg
+        #10244a 0deg 40deg,
+        #d4af37 40deg 80deg,
+        #17315f 80deg 120deg,
+        #d4af37 120deg 160deg,
+        #10244a 160deg 200deg,
+        #d4af37 200deg 240deg,
+        #17315f 240deg 280deg,
+        #d4af37 280deg 320deg,
+        #10244a 320deg 360deg
     );
+
+    box-shadow:
+        0 0 0 4px #ffffff,
+        0 0 0 8px #d4af37,
+        0 15px 45px rgba(0, 0, 0, 0.45);
 
     transition: transform 4s cubic-bezier(0.15, 0.85, 0.25, 1);
 }
 
-/* Linie oddzielające pola */
+/* ODDZIELENIE PÓL */
+
 .wheel::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 50%;
+
     background: repeating-conic-gradient(
         from 0deg,
         transparent 0deg 39deg,
-        rgba(0, 0, 0, 0.35) 39deg 40deg
+        rgba(255, 255, 255, 0.8) 39deg 40deg
     );
+
     pointer-events: none;
     z-index: 2;
 }
 
-/* Kwoty */
+/* DELIKATNY BLASK */
+
+.wheel::after {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* KWOTY */
+
 .segment {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 100px;
-    height: 40px;
-    margin-left: -50px;
-    margin-top: -20px;
+
+    width: 120px;
+    height: 45px;
+
+    margin-left: -60px;
+    margin-top: -22px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: 20px;
-    font-weight: bold;
-    color: #222;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.8);
 
     z-index: 3;
 }
 
-/*
-   Każda kwota znajduje się
-   w środku swojego pola.
-*/
+/* UŁOŻENIE KWOT */
+
 .s1 {
-    transform: rotate(20deg) translateY(-145px) rotate(-20deg);
+    transform: rotate(20deg) translateY(-160px) rotate(-20deg);
 }
 
 .s2 {
-    transform: rotate(60deg) translateY(-145px) rotate(-60deg);
+    transform: rotate(60deg) translateY(-160px) rotate(-60deg);
 }
 
 .s3 {
-    transform: rotate(100deg) translateY(-145px) rotate(-100deg);
+    transform: rotate(100deg) translateY(-160px) rotate(-100deg);
 }
 
 .s4 {
-    transform: rotate(140deg) translateY(-145px) rotate(-140deg);
+    transform: rotate(140deg) translateY(-160px) rotate(-140deg);
 }
 
 .s5 {
-    transform: rotate(180deg) translateY(-145px) rotate(-180deg);
+    transform: rotate(180deg) translateY(-160px) rotate(-180deg);
 }
 
 .s6 {
-    transform: rotate(220deg) translateY(-145px) rotate(-220deg);
+    transform: rotate(220deg) translateY(-160px) rotate(-220deg);
 }
 
 .s7 {
-    transform: rotate(260deg) translateY(-145px) rotate(-260deg);
+    transform: rotate(260deg) translateY(-160px) rotate(-260deg);
 }
 
 .s8 {
-    transform: rotate(300deg) translateY(-145px) rotate(-300deg);
+    transform: rotate(300deg) translateY(-160px) rotate(-300deg);
 }
 
 .s9 {
-    transform: rotate(340deg) translateY(-145px) rotate(-340deg);
+    transform: rotate(340deg) translateY(-160px) rotate(-340deg);
 }
 
-/* Wskaźnik */
+/* WSKAŹNIK */
+
 .pointer {
     position: absolute;
     z-index: 10;
-    top: -18px;
+
+    top: -4px;
     left: 50%;
+
     transform: translateX(-50%);
 
-    font-size: 48px;
-    line-height: 1;
-    color: #222;
+    width: 0;
+    height: 0;
 
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 55px solid #d4af37;
+
+    filter:
+        drop-shadow(0 3px 3px rgba(0, 0, 0, 0.5));
 }
 
-/* Przycisk */
+/* PRZYCISK */
+
 button {
-    margin-top: 20px;
-    padding: 15px 45px;
+    margin-top: 10px;
 
-    font-size: 20px;
-    font-weight: bold;
+    padding: 17px 60px;
 
-    border: none;
-    border-radius: 10px;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #d4af37,
+        #f2d675
+    );
+
+    color: #07152f;
+
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
 
     cursor: pointer;
 
-    background: #222;
-    color: white;
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.35);
 
-    transition: transform 0.2s, opacity 0.2s;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        filter 0.2s;
 }
 
 button:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.03);
+
+    box-shadow:
+        0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 button:disabled {
-    opacity: 0.6;
+    opacity: 0.55;
     cursor: not-allowed;
     transform: none;
 }
 
-/* Wynik */
-#result {
-    margin-top: 20px;
-    min-height: 40px;
+/* WYNIK */
 
-    font-size: 28px;
-    font-weight: bold;
+#result {
+    margin: 25px auto 0;
+
+    min-height: 55px;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #f2d675;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Historia */
+/* HISTORIA */
+
 .history {
-    margin-top: 50px;
+    margin-top: 60px;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 18px;
+
+    color: #17233d;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3);
 }
 
 .history h2 {
-    margin-bottom: 20px;
+    margin: 0 0 25px;
+
+    font-size: 27px;
+
+    color: #10244a;
 }
 
 table {
     width: 100%;
+
     border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
+
     overflow: hidden;
+
+    border-radius: 10px;
 }
 
 th,
 td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #e5e5e5;
 }
 
 th {
-    font-weight: bold;
+    background: #10244a;
+    color: #ffffff;
+
+    font-weight: 700;
 }
 
-/* Telefon */
+td {
+    color: #26334d;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* TELEFON */
+
 @media (max-width: 600px) {
 
+    .container {
+        padding: 30px 15px 45px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
     .wheel-area {
-        width: 330px;
-        height: 330px;
+        width: 350px;
+        height: 350px;
+        margin-top: 35px;
     }
 
     .wheel {
-        width: 310px;
-        height: 310px;
+        width: 325px;
+        height: 325px;
+        border-width: 9px;
     }
 
     .segment {
-        width: 80px;
+        width: 90px;
         height: 35px;
-        margin-left: -40px;
+
+        margin-left: -45px;
         margin-top: -17px;
+
         font-size: 16px;
     }
 
@@ -249,7 +367,69 @@ th {
         transform-origin: center;
     }
 
-    h1 {
-        font-size: 32px;
+    .s1 {
+        transform: rotate(20deg) translateY(-116px) rotate(-20deg);
+    }
+
+    .s2 {
+        transform: rotate(60deg) translateY(-116px) rotate(-60deg);
+    }
+
+    .s3 {
+        transform: rotate(100deg) translateY(-116px) rotate(-100deg);
+    }
+
+    .s4 {
+        transform: rotate(140deg) translateY(-116px) rotate(-140deg);
+    }
+
+    .s5 {
+        transform: rotate(180deg) translateY(-116px) rotate(-180deg);
+    }
+
+    .s6 {
+        transform: rotate(220deg) translateY(-116px) rotate(-220deg);
+    }
+
+    .s7 {
+        transform: rotate(260deg) translateY(-116px) rotate(-260deg);
+    }
+
+    .s8 {
+        transform: rotate(300deg) translateY(-116px) rotate(-300deg);
+    }
+
+    .s9 {
+        transform: rotate(340deg) translateY(-116px) rotate(-340deg);
+    }
+
+    .pointer {
+        top: 0;
+        border-left-width: 20px;
+        border-right-width: 20px;
+        border-top-width: 45px;
+    }
+
+    button {
+        padding: 15px 45px;
+        font-size: 19px;
+    }
+
+    #result {
+        font-size: 25px;
+    }
+
+    .history {
+        padding: 20px 12px;
+    }
+
+    .history h2 {
+        font-size: 23px;
+    }
+
+    th,
+    td {
+        padding: 11px 7px;
+        font-size: 14px;
     }
 }
