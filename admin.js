@@ -1,6 +1,5 @@
 const SUPABASE_URL = "https://xytobyfvnrrbirmbwhba.supabase.co";
-const SUPABASE_KEY = "
-  xytobyfvnrrbirmbwhba";
+const SUPABASE_KEY = "xytobyfvnrrbirmbwhba";
 
 const supabaseClient = window.supabase.createClient(
     SUPABASE_URL,
@@ -11,7 +10,7 @@ const personName = document.getElementById("personName");
 const generateButton = document.getElementById("generateButton");
 const generatedLink = document.getElementById("generatedLink");
 
-generateButton.addEventListener("click", async () => {
+generateButton.addEventListener("click", async function () {
 
     const name = personName.value.trim();
 
@@ -43,30 +42,31 @@ generateButton.addEventListener("click", async () => {
     const token = data[0].token;
 
     const link =
-        `${window.location.origin}/kolo-fortuny/?token=${token}`;
+        window.location.origin +
+        "/kolo-fortuny/?token=" +
+        token;
 
-    generatedLink.innerHTML = `
-        <p>Link dla <strong>${name}</strong>:</p>
+    generatedLink.innerHTML =
+        "<p>Link dla <strong>" +
+        name +
+        "</strong>:</p>" +
 
-        <input
-            type="text"
-            value="${link}"
-            readonly
-            id="linkInput"
-        >
+        "<input type='text' value='" +
+        link +
+        "' readonly id='linkInput'>" +
 
-        <button id="copyButton">
-            KOPIUJ LINK
-        </button>
-    `;
+        "<button id='copyButton'>KOPIUJ LINK</button>";
 
-    document.getElementById("copyButton").addEventListener("click", async () => {
+    document.getElementById("copyButton").addEventListener(
+        "click",
+        async function () {
 
-        await navigator.clipboard.writeText(link);
+            await navigator.clipboard.writeText(link);
 
-        document.getElementById("copyButton").textContent =
-            "SKOPIOWANO ✓";
-    });
+            document.getElementById("copyButton").textContent =
+                "SKOPIOWANO ✓";
+        }
+    );
 
     personName.value = "";
     generateButton.disabled = false;
