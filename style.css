@@ -60,16 +60,7 @@ p {
     border-radius: 50%;
     overflow: hidden;
 
-   border: 12px solid transparent;
-border-image: linear-gradient(
-    135deg,
-    #fff1a8,
-    #d4af37,
-    #8a6415,
-    #f5d76e,
-    #a87916,
-    #fff1a8
-) 1;
+    border: 12px solid #b88a20;
 
     background:
         conic-gradient(
@@ -98,33 +89,18 @@ border-image: linear-gradient(
 
 .wheel::before {
     content: "";
-
     position: absolute;
     inset: 0;
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle at 30% 18%,
-            rgba(255, 255, 255, 0.35) 0%,
-            rgba(255, 255, 255, 0.16) 12%,
-            rgba(255, 255, 255, 0) 32%
-        ),
-        linear-gradient(
-            125deg,
-            rgba(255, 255, 255, 0.18) 0%,
-            rgba(255, 255, 255, 0) 35%,
-            rgba(0, 0, 0, 0.18) 70%,
-            rgba(0, 0, 0, 0.38) 100%
-        );
-
-    box-shadow:
-        inset 0 0 35px rgba(255, 255, 255, 0.12),
-        inset 0 -15px 35px rgba(0, 0, 0, 0.35);
+    background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 39deg,
+        rgba(255, 255, 255, 0.75) 39deg 40deg
+    );
 
     pointer-events: none;
-
     z-index: 2;
 }
 
