@@ -1,21 +1,18 @@
-const wheel = document.getElementById("wheel");
-const spinButton = document.getElementById("spinButton");
-const result = document.getElementById("result");
+const historyBody = document.getElementById("historyBody");
 
-let rotation = 0;
+async function loadHistory() {
+    historyBody.innerHTML = "<tr><td colspan='3'>Ładowanie historii...</td></tr>";
 
-spinButton.addEventListener("click", () => {
-    spinButton.disabled = true;
-    result.textContent = "";
+    // Na tym etapie przygotowujemy miejsce na połączenie z Supabase.
+    // Po dodaniu klucza i adresu projektu pobierzemy tutaj prawdziwą historię.
 
-    const randomRotation = 1800 + Math.floor(Math.random() * 360);
+    historyBody.innerHTML = `
+        <tr>
+            <td>Ania</td>
+            <td>60 zł</td>
+            <td>18.09.2026</td>
+        </tr>
+    `;
+}
 
-    rotation += randomRotation;
-
-    wheel.style.transform = `rotate(${rotation}deg)`;
-
-    setTimeout(() => {
-        result.textContent = "🎉 Gratulacje!";
-        spinButton.disabled = false;
-    }, 4000);
-});
+loadHistory();
