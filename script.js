@@ -165,7 +165,7 @@ async function spinWheel() {
     const segmentCenter = index * 40 + 20;
 
     // Wskaźnik znajduje się na górze koła
-    const targetAngle = 270 - segmentCenter;
+    const targetAngle = 360 - segmentCenter;
 
     // Kilka pełnych obrotów + ustawienie właściwego pola
     const extraSpins = 5 * 360;
