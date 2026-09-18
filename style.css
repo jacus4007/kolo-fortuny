@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     color: #ffffff;
     background:
-        radial-gradient(circle at 50% 0%, #1d3768 0%, #0c1935 45%, #050b18 100%);
+    radial-gradient(circle at 50% 0%, #fff8e8 0%, #f3e5c8 50%, #d8c49b 100%);
 }
 
 .container {
