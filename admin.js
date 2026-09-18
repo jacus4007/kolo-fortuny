@@ -82,12 +82,10 @@ async function loadHistory() {
     historyBody.innerHTML =
         "<tr><td colspan='3'>Ładowanie historii...</td></tr>";
 
-    const { data, error } = await supabaseClient.rpc(
-        "get_spin_history"
-    );
+    const response = await supabaseClient.rpc("get_spin_history");
 
-    if (error) {
-        console.error(error);
+    if (response.error) {
+        console.error("Błąd historii:", response.error);
 
         historyBody.innerHTML =
             "<tr><td colspan='3'>Nie udało się pobrać historii.</td></tr>";
@@ -95,20 +93,37 @@ async function loadHistory() {
         return;
     }
 
-    if (!data || data.length === 0) {
+    const history = response.data;
+
+    if (!history || history.length === 0) {
         historyBody.innerHTML =
             "<tr><td colspan='3'>Brak historii.</td></tr>";
 
         return;
     }
 
-    historyBody.innerHTML = data.map(row => `
-        <tr>
-            <td>${row.person_name ?? "-"}</td>
-            <td>${row.result} zł</td>
-            <td>${new Date(row.created_at).toLocaleString("pl-PL")}</td>
-        </tr>
-    `).join("");
+    historyBody.innerHTML = "";
+
+    history.forEach(function(row) {
+
+        const tr = document.createElement("tr");
+
+        const personCell = document.createElement("td");
+        personCell.textContent = row.person_name || "-";
+
+        const resultCell = document.createElement("td");
+        resultCell.textContent = row.result + " zł";
+
+        const dateCell = document.createElement("td");
+        dateCell.textContent =
+            new Date(row.created_at).toLocaleString("pl-PL");
+
+        tr.appendChild(personCell);
+        tr.appendChild(resultCell);
+        tr.appendChild(dateCell);
+
+        historyBody.appendChild(tr);
+    });
 }
 
 loadHistory();
