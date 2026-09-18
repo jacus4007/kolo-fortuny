@@ -8,14 +8,14 @@ body {
     font-family: Arial, sans-serif;
     color: #ffffff;
     background:
-        radial-gradient(circle at top, #172b55 0%, #0b1630 45%, #050b19 100%);
+        radial-gradient(circle at 50% 0%, #1d3768 0%, #0c1935 45%, #050b18 100%);
 }
 
 .container {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 45px 20px 60px;
+    padding: 45px 20px 70px;
     text-align: center;
 }
 
@@ -27,82 +27,96 @@ h1 {
     font-weight: 800;
     letter-spacing: 1px;
     color: #ffffff;
-    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 
 p {
     margin: 10px 0 0;
     font-size: 19px;
-    color: #d9e0ef;
+    color: #d9e2f2;
 }
 
-/* KOŁO */
+/* OBSZAR KOŁA */
 
 .wheel-area {
     position: relative;
     width: 480px;
     height: 480px;
     margin: 45px auto 30px;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* KOŁO */
+
 .wheel {
     position: relative;
+
     width: 450px;
     height: 450px;
-    border-radius: 50%;
-    border: 12px solid #d4af37;
 
+    border-radius: 50%;
     overflow: hidden;
 
+    border: 10px solid #d4af37;
+
     background: conic-gradient(
-        #10244a 0deg 40deg,
+        #102b55 0deg 40deg,
         #d4af37 40deg 80deg,
-        #17315f 80deg 120deg,
+        #153565 80deg 120deg,
         #d4af37 120deg 160deg,
-        #10244a 160deg 200deg,
+        #102b55 160deg 200deg,
         #d4af37 200deg 240deg,
-        #17315f 240deg 280deg,
+        #153565 240deg 280deg,
         #d4af37 280deg 320deg,
-        #10244a 320deg 360deg
+        #102b55 320deg 360deg
     );
 
     box-shadow:
-        0 0 0 4px #ffffff,
-        0 0 0 8px #d4af37,
-        0 15px 45px rgba(0, 0, 0, 0.45);
+        0 0 0 3px #ffffff,
+        0 0 0 7px #d4af37,
+        0 0 35px rgba(212, 175, 55, 0.25),
+        0 20px 50px rgba(0, 0, 0, 0.5);
 
     transition: transform 4s cubic-bezier(0.15, 0.85, 0.25, 1);
 }
 
-/* ODDZIELENIE PÓL */
+/* LINIE PODZIAŁU PÓL */
 
 .wheel::before {
     content: "";
     position: absolute;
     inset: 0;
+
     border-radius: 50%;
 
     background: repeating-conic-gradient(
         from 0deg,
         transparent 0deg 39deg,
-        rgba(255, 255, 255, 0.8) 39deg 40deg
+        rgba(255, 255, 255, 0.75) 39deg 40deg
     );
 
     pointer-events: none;
     z-index: 2;
 }
 
-/* DELIKATNY BLASK */
+/* WEWNĘTRZNA OBRĘCZ */
 
 .wheel::after {
     content: "";
+
     position: absolute;
-    inset: 15px;
+    inset: 18px;
+
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    border: 2px solid rgba(255, 255, 255, 0.28);
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.2);
+
     pointer-events: none;
     z-index: 4;
 }
@@ -111,6 +125,7 @@ p {
 
 .segment {
     position: absolute;
+
     left: 50%;
     top: 50%;
 
@@ -121,20 +136,25 @@ p {
     margin-top: -22px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 900;
+
     color: #ffffff;
 
     text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.8);
+        0 2px 4px rgba(0, 0, 0, 0.9);
 
     z-index: 3;
 }
 
-/* UŁOŻENIE KWOT */
+/*
+   WAŻNE:
+   Tych pozycji nie zmieniamy.
+   Są zsynchronizowane z animacją koła.
+*/
 
 .s1 {
     transform: rotate(20deg) translateY(-160px) rotate(-20deg);
@@ -176,9 +196,10 @@ p {
 
 .pointer {
     position: absolute;
+
     z-index: 10;
 
-    top: -4px;
+    top: -3px;
     left: 50%;
 
     transform: translateX(-50%);
@@ -188,10 +209,10 @@ p {
 
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 55px solid #d4af37;
+    border-top: 58px solid #d4af37;
 
     filter:
-        drop-shadow(0 3px 3px rgba(0, 0, 0, 0.5));
+        drop-shadow(0 4px 4px rgba(0, 0, 0, 0.55));
 }
 
 /* PRZYCISK */
@@ -199,27 +220,30 @@ p {
 button {
     margin-top: 10px;
 
-    padding: 17px 60px;
+    padding: 17px 65px;
 
     border: 2px solid #d4af37;
-    border-radius: 12px;
+    border-radius: 14px;
 
     background: linear-gradient(
         135deg,
         #d4af37,
-        #f2d675
+        #f5dc7d,
+        #c59d25
     );
 
     color: #07152f;
 
     font-size: 21px;
     font-weight: 900;
-    letter-spacing: 1px;
+
+    letter-spacing: 1.5px;
 
     cursor: pointer;
 
     box-shadow:
-        0 6px 20px rgba(0, 0, 0, 0.35);
+        0 7px 20px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(212, 175, 55, 0.15);
 
     transition:
         transform 0.2s,
@@ -228,10 +252,11 @@ button {
 }
 
 button:hover {
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-3px) scale(1.03);
 
     box-shadow:
-        0 10px 25px rgba(212, 175, 55, 0.3);
+        0 10px 28px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(212, 175, 55, 0.3);
 }
 
 button:active {
@@ -252,29 +277,29 @@ button:disabled {
     min-height: 55px;
 
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 900;
 
-    color: #f2d675;
+    color: #f5d76e;
 
     text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.4);
+        0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* HISTORIA */
 
 .history {
-    margin-top: 60px;
+    margin-top: 65px;
 
     padding: 30px;
 
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(255, 255, 255, 0.98);
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     color: #17233d;
 
     box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.3);
+        0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
 .history h2 {
@@ -282,7 +307,7 @@ button:disabled {
 
     font-size: 27px;
 
-    color: #10244a;
+    color: #102b55;
 }
 
 table {
@@ -292,18 +317,19 @@ table {
 
     overflow: hidden;
 
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 th,
 td {
     padding: 14px 12px;
 
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 th {
-    background: #10244a;
+    background: #102b55;
+
     color: #ffffff;
 
     font-weight: 700;
@@ -336,13 +362,15 @@ tr:last-child td {
     .wheel-area {
         width: 350px;
         height: 350px;
+
         margin-top: 35px;
     }
 
     .wheel {
         width: 325px;
         height: 325px;
-        border-width: 9px;
+
+        border-width: 8px;
     }
 
     .segment {
@@ -353,18 +381,6 @@ tr:last-child td {
         margin-top: -17px;
 
         font-size: 16px;
-    }
-
-    .s1,
-    .s2,
-    .s3,
-    .s4,
-    .s5,
-    .s6,
-    .s7,
-    .s8,
-    .s9 {
-        transform-origin: center;
     }
 
     .s1 {
@@ -405,6 +421,7 @@ tr:last-child td {
 
     .pointer {
         top: 0;
+
         border-left-width: 20px;
         border-right-width: 20px;
         border-top-width: 45px;
