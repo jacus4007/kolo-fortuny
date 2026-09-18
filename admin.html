@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel administratora – Koło Fortuny</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎡 Panel administratora</h1>
+
+        <p>Utwórz nowy, jednorazowy link dla uczestnika.</p>
+
+        <div class="admin-box">
+
+            <input
+                type="text"
+                id="personName"
+                placeholder="Imię osoby"
+            >
+
+            <button id="generateButton">
+                GENERUJ LINK
+            </button>
+
+            <div id="generatedLink"></div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>
