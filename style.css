@@ -70,15 +70,41 @@ p {
     transform-origin: center;
 }
 
-.s1 { transform: rotate(20deg) translateY(-130px); }
-.s2 { transform: rotate(60deg) translateY(-130px); }
-.s3 { transform: rotate(100deg) translateY(-130px); }
-.s4 { transform: rotate(140deg) translateY(-130px); }
-.s5 { transform: rotate(180deg) translateY(-130px); }
-.s6 { transform: rotate(220deg) translateY(-130px); }
-.s7 { transform: rotate(260deg) translateY(-130px); }
-.s8 { transform: rotate(300deg) translateY(-130px); }
-.s9 { transform: rotate(340deg) translateY(-130px); }
+.s1 {
+    transform: rotate(0deg) translateY(-150px);
+}
+
+.s2 {
+    transform: rotate(40deg) translateY(-150px);
+}
+
+.s3 {
+    transform: rotate(80deg) translateY(-150px);
+}
+
+.s4 {
+    transform: rotate(120deg) translateY(-150px);
+}
+
+.s5 {
+    transform: rotate(160deg) translateY(-150px);
+}
+
+.s6 {
+    transform: rotate(200deg) translateY(-150px);
+}
+
+.s7 {
+    transform: rotate(240deg) translateY(-150px);
+}
+
+.s8 {
+    transform: rotate(280deg) translateY(-150px);
+}
+
+.s9 {
+    transform: rotate(320deg) translateY(-150px);
+}
 
 .pointer {
     position: absolute;
