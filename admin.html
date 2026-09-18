@@ -6,23 +6,27 @@
 
     <title>Panel administratora – Koło Fortuny</title>
 
-  <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="admin-container">
 
-        <h1>🎡 Panel administratora</h1>
-
-        <p>Utwórz nowy, jednorazowy link dla uczestnika.</p>
+        <div class="admin-header">
+            <h1>🎡 Panel administratora</h1>
+            <p>Twórz jednorazowe linki dla uczestników.</p>
+        </div>
 
         <div class="admin-box">
+
+            <h2>Nowy uczestnik</h2>
 
             <input
                 type="text"
                 id="personName"
-                placeholder="Imię osoby"
+                placeholder="Wpisz imię osoby"
+                autocomplete="off"
             >
 
             <button id="generateButton">
