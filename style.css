@@ -13,12 +13,15 @@ body {
 }
 
 .container {
+    width: 100%;
+    max-width: 900px;
     text-align: center;
+    padding: 30px 20px;
 }
 
 h1 {
     font-size: 42px;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
 
 p {
@@ -29,15 +32,16 @@ p {
     position: relative;
     width: 420px;
     height: 420px;
-    margin: 30px auto;
+    margin: 35px auto;
 }
 
 .wheel {
+    position: relative;
     width: 400px;
     height: 400px;
+    margin: 0 auto;
     border-radius: 50%;
     border: 8px solid #222;
-    position: relative;
     overflow: hidden;
 
     background: conic-gradient(
@@ -55,77 +59,115 @@ p {
     transition: transform 4s cubic-bezier(0.15, 0.85, 0.25, 1);
 }
 
-.segment {
+/* Linie oddzielające pola */
+.wheel::before {
+    content: "";
     position: absolute;
-    width: 50%;
-    height: 50%;
-    left: 25%;
-    top: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    transform-origin: center;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 39deg,
+        rgba(0, 0, 0, 0.35) 39deg 40deg
+    );
+    pointer-events: none;
+    z-index: 2;
 }
 
+/* Kwoty */
+.segment {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 40px;
+    margin-left: -50px;
+    margin-top: -20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+
+    z-index: 3;
+}
+
+/*
+   Każda kwota znajduje się
+   w środku swojego pola.
+*/
 .s1 {
-    transform: rotate(0deg) translateY(-150px);
+    transform: rotate(20deg) translateY(-145px) rotate(-20deg);
 }
 
 .s2 {
-    transform: rotate(40deg) translateY(-150px);
+    transform: rotate(60deg) translateY(-145px) rotate(-60deg);
 }
 
 .s3 {
-    transform: rotate(80deg) translateY(-150px);
+    transform: rotate(100deg) translateY(-145px) rotate(-100deg);
 }
 
 .s4 {
-    transform: rotate(120deg) translateY(-150px);
+    transform: rotate(140deg) translateY(-145px) rotate(-140deg);
 }
 
 .s5 {
-    transform: rotate(160deg) translateY(-150px);
+    transform: rotate(180deg) translateY(-145px) rotate(-180deg);
 }
 
 .s6 {
-    transform: rotate(200deg) translateY(-150px);
+    transform: rotate(220deg) translateY(-145px) rotate(-220deg);
 }
 
 .s7 {
-    transform: rotate(240deg) translateY(-150px);
+    transform: rotate(260deg) translateY(-145px) rotate(-260deg);
 }
 
 .s8 {
-    transform: rotate(280deg) translateY(-150px);
+    transform: rotate(300deg) translateY(-145px) rotate(-300deg);
 }
 
 .s9 {
-    transform: rotate(320deg) translateY(-150px);
+    transform: rotate(340deg) translateY(-145px) rotate(-340deg);
 }
 
+/* Wskaźnik */
 .pointer {
     position: absolute;
     z-index: 10;
-    top: -5px;
+    top: -18px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 42px;
+
+    font-size: 48px;
+    line-height: 1;
     color: #222;
+
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
 }
 
+/* Przycisk */
 button {
     margin-top: 20px;
-    padding: 15px 40px;
+    padding: 15px 45px;
+
     font-size: 20px;
     font-weight: bold;
+
     border: none;
     border-radius: 10px;
+
     cursor: pointer;
+
     background: #222;
     color: white;
+
+    transition: transform 0.2s, opacity 0.2s;
 }
 
 button:hover {
@@ -135,10 +177,79 @@ button:hover {
 button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
 }
 
+/* Wynik */
 #result {
     margin-top: 20px;
+    min-height: 40px;
+
     font-size: 28px;
     font-weight: bold;
+}
+
+/* Historia */
+.history {
+    margin-top: 50px;
+}
+
+.history h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Telefon */
+@media (max-width: 600px) {
+
+    .wheel-area {
+        width: 330px;
+        height: 330px;
+    }
+
+    .wheel {
+        width: 310px;
+        height: 310px;
+    }
+
+    .segment {
+        width: 80px;
+        height: 35px;
+        margin-left: -40px;
+        margin-top: -17px;
+        font-size: 16px;
+    }
+
+    .s1,
+    .s2,
+    .s3,
+    .s4,
+    .s5,
+    .s6,
+    .s7,
+    .s8,
+    .s9 {
+        transform-origin: center;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
 }
