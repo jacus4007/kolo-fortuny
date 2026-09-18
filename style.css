@@ -240,12 +240,12 @@ button {
     border: 2px solid #d4af37;
     border-radius: 14px;
 
-    background: linear-gradient(
-        135deg,
-        #d4af37,
-        #f5dc7d,
-        #c59d25
-    );
+   background: linear-gradient(
+    135deg,
+    #c99b2e,
+    #f7df8a,
+    #d4af37
+);
 
     color: #07152f;
 
