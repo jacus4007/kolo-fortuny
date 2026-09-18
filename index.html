@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koło Fortuny</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>🎡 Koło Fortuny</h1>
+    <div class="container">
 
-    <p>Witaj! Masz jedną próbę.</p>
+        <h1>🎡 Koło Fortuny</h1>
+        <p>Masz jedną próbę!</p>
 
-    <button>ZAKRĘĆ</button>
+        <div class="wheel-area">
+            <div class="pointer">▼</div>
+
+            <div class="wheel" id="wheel">
+                <div class="segment s1">40 zł</div>
+                <div class="segment s2">45 zł</div>
+                <div class="segment s3">50 zł</div>
+                <div class="segment s4">60 zł</div>
+                <div class="segment s5">70 zł</div>
+                <div class="segment s6">80 zł</div>
+                <div class="segment s7">100 zł</div>
+                <div class="segment s8">140 zł</div>
+                <div class="segment s9">200 zł</div>
+            </div>
+        </div>
+
+        <button id="spinButton">ZAKRĘĆ</button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
