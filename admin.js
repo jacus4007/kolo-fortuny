@@ -71,3 +71,44 @@ generateButton.addEventListener("click", async function () {
     personName.value = "";
     generateButton.disabled = false;
 });
+async function loadHistory() {
+
+    const historyBody = document.getElementById("historyBody");
+
+    if (!historyBody) {
+        return;
+    }
+
+    historyBody.innerHTML =
+        "<tr><td colspan='3'>Ładowanie historii...</td></tr>";
+
+    const { data, error } = await supabaseClient.rpc(
+        "get_spin_history"
+    );
+
+    if (error) {
+        console.error(error);
+
+        historyBody.innerHTML =
+            "<tr><td colspan='3'>Nie udało się pobrać historii.</td></tr>";
+
+        return;
+    }
+
+    if (!data || data.length === 0) {
+        historyBody.innerHTML =
+            "<tr><td colspan='3'>Brak historii.</td></tr>";
+
+        return;
+    }
+
+    historyBody.innerHTML = data.map(row => `
+        <tr>
+            <td>${row.person_name ?? "-"}</td>
+            <td>${row.result} zł</td>
+            <td>${new Date(row.created_at).toLocaleString("pl-PL")}</td>
+        </tr>
+    `).join("");
+}
+
+loadHistory();
